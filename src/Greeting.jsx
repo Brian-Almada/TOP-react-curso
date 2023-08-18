@@ -10,7 +10,7 @@ function Greeting() {
       </ol>
       <div className="container">
         <svg>
-          <circle cx="75" cy="75" r="50" stroke="green" stroke-width="2"/>
+          <circle cx="75" cy="75" r="50" stroke="green" strokeWidth="2"/>
         </svg>
       </div>
 
