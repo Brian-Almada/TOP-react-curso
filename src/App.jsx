@@ -9,11 +9,17 @@ function Button() {
   )
 }
 
+function Button2() {
+  return (
+    <button>Don´t click me!</button>
+  )
+}
+
 function App() {
   return (
     <div>
       <Button />
-      <Button />
+      <Button2 />
       <Button />
     </div>
   )
