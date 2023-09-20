@@ -3,35 +3,31 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
-function Button({text, color, fontSize, handleClick}) {
+function Person() {
+  const [person, setPerson] = useState({ name: 'John', age: 100});
 
-const buttonStyle = {
-  color: color,
-  fontSize: fontSize + 'px'
-};
 
-  return (
-    <button onClick={() => handleClick('https://github.com/Brian-Almada')} style={buttonStyle}>{text}</button>
-  )
+// BAD - Don´t do this!
+  const handleIncreaseAge = () => {
+  // mutating the current state object
+    person.age = person.age + 1;
+    setPerson(person);
 }
 
-Button.defaultProps = {
-  text: "Click Me, please",
-  color: "blue",
-  fontSize: 12
+//GOOD - Do this!
+  const handleIncreaseAge = () => {
+  // copy the existing person objet into a new objet
+  //while updating the age property
+    const newPerson = { ...person, age: person.age + 1};
+    setPerson(newPerson);
 }
 
-function App() {
-  const handleButtonClick = (url) => {
-    window.location.href = url;
-  };
-
   return (
-    <div>
-      <Button handleClick ={handleButtonClick} />
-      <Button text="Don´t Click Me" color="red" fontSize={12}/>
-      <Button                      color="brown" fontSize={20}/>
-    </div>
+    <>
+      <h1>{person.name}</h1>
+      <h2>{person.age}</h2>
+      <button onClick={handleIncreaseAge}>Increase age</button>
+    </>
   )
 }
 
