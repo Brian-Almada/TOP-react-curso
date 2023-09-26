@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
+import Person from './App.jsx'
 import Greeting from './Greeting.jsx'
 import './index.css'
 
