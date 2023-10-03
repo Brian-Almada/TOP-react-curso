@@ -8,11 +8,6 @@ class Contador extends Component {
 incremento = () => {
     this.setState({contar: this.state.contar +1})
     const {contar} = this.state;
-
-    if (contar > 20) {
-        return contar === 0
-    }
-
 }
 
 formatoContar() {
