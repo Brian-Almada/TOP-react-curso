@@ -15,8 +15,8 @@ formatoContar() {
 }
 
 cambiarClase() {
-    let classes = "badge m-2 badge-danger";
-    classes += this.state.value === 0 ? "light" : "danger";
+    let classes = "badge m-2 badge-";
+    classes += this.state.value === 0 ? "primary" : "danger";
     return classes;
 }
 
