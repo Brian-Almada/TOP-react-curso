@@ -2,24 +2,31 @@ import React, { Component } from "react";
 
 class Contador extends Component {
     state = {
-        contar: 0
-    }
+        value:this.props.value
+    };
 
 incremento = () => {
-    this.setState({contar: this.state.contar +1})
-    const {contar} = this.state;
+    this.setState({value: this.state.value + 1});
 }
 
 formatoContar() {
-    const {contar} = this.state;
-    return contar === 0 ? "Cero" : contar;
+    const {value} = this.state;
+    return value === 0 ? "Cero" : value;
+}
+
+cambiarClase() {
+    let classes = "badge m-2 badge-danger";
+    classes += this.state.value === 0 ? "light" : "danger";
+    return classes;
 }
 
     render() {
         return (
             <div>
-                <span>{this.formatoContar()}</span>
-                <button onClick={this.incremento}>
+                <span className={this.cambiarClase()}>{this.formatoContar()}</span>
+                <button
+                    className="btn btn-secondary btn-sm"
+                    onClick={this.incremento}>
                     Increment
                 </button>
             </div>
