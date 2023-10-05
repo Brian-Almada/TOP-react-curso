@@ -2,30 +2,14 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import Cards from './Cards.jsx'
 
-function Person() {
-  const [person, setPerson] = useState({ name: 'John', age: 100});
-
-
-  const handleIncreaseAge = () => {
-    console.log("in handleIncreaseAge (before setPeson call): ", person)
-    setPerson((prevPerson) => ({ ...prevPerson, age: prevPerson.age + 1 }));
-    setPerson((prevPerson) => ({ ...prevPerson, age: prevPerson.age + 1 }));
-  // we've called setPerson,surely person has updated?
-  console.log("in handleIncreaseAge (after setPerson call): ", person);
-}
-
-//this console.log runs every time the component renders
-// what do you think this will print?
-console.log("during render", person);
-
+function App() {
   return (
-    <>
-      <h1>{person.name}</h1>
-      <h2>{person.age}</h2>
-      <button onClick={handleIncreaseAge}>Increase age</button>
-    </>
+    <div className='App'>
+      <Cards />
+    </div>
   )
 }
 
-export default Person
+export default App
