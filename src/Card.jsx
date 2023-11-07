@@ -20,6 +20,6 @@ function Card(){
             </div>
         </div>
     )
-}*/
+}
 
-export default Card;
+export default Card;*/
