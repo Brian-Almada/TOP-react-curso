@@ -7,7 +7,7 @@ import Cards from './Cards.jsx'
 function App() {
   return (
     <div className='App'>
-      <Cards />
+
     </div>
   )
 }
